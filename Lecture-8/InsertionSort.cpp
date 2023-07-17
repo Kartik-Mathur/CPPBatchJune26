@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
 
-	int a[] = {4, 1, 3, 2, 0, -1, 8, 9, 20, 11, 3, 9, 3, 7, 3, 8};
+	int a[] = {4, 1, 3, 2, 0};
 	int n = sizeof(a) / sizeof(int);
 	/*
 	Approach: 1
