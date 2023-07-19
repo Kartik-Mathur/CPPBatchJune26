@@ -29,10 +29,10 @@ bool checkPrime(int n) {
 	}
 
 	if (i == n) {
-		return true;
+		return 1;
 	}
 	else {
-		return false;
+		return 0;
 	}
 }
 
