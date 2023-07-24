@@ -3,8 +3,11 @@ using namespace std;
 
 int binarySearch(int a[], int n, int key) {
 	int s = 0, e = n - 1;
+
 	while (s <= e) {
+
 		int m = (s + e) / 2;
+
 		if (a[m] == key) {
 			return m;
 		}
