@@ -1,0 +1,17 @@
+1. Fibonacci
+2. Min Steps to 1
+3. Minimum number of Coins exchange
+4. Wine Problem
+5. Minimum Cost in 2D matrix
+6. Another Variant: http://codeforces.com/contest/429/problem/B
+7. LIS
+	- Calculate length
+	- Print LIS
+		- One LIS
+		- Print all LIS
+8. LCS
+	- Length
+	- Print LCS
+		- Print all LCS
+9. Edit Distance
+10. 0-1 Knapsack
