@@ -10,6 +10,8 @@ void solve(char*a, int n) {
 		i--;
 	}
 
+
+
 	if (i == -1) {
 		sort(a, a + n);
 		for (int i = 0; i < n; ++i)
