@@ -3,6 +3,7 @@
 using namespace std;
 
 bool safeHai(int a[][9], int i, int j, int no, int n) {
+
 	// 1. no row ya col mei nhi hona chahiye
 	for (int k = 0; k < n; ++k)
 	{
