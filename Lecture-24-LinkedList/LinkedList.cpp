@@ -26,7 +26,17 @@ void insertAtFront(node* &head, node* &tail, int data) {
 	}
 }
 
-void insertAtEnd() {}
+void insertAtEnd(node* &head, node* &tail, int data) {
+	if (head == NULL) {
+		node* n = new node(data);
+		head = tail = n;
+	}
+	else {
+		node* n = new node(data);
+		tail->next = n;
+		tail = n;
+	}
+}
 
 void insertAtMiddle() {}
 //////////////////////////// @INSERTION IN LINKED LIST ///////////////////////////
@@ -50,6 +60,9 @@ int main() {
 	insertAtFront(head, tail, 1);
 	insertAtFront(head, tail, 2);
 	insertAtFront(head, tail, 3);
+	insertAtEnd(head, tail, 4);
+	insertAtEnd(head, tail, 5);
+	insertAtEnd(head, tail, 6);
 
 	printLL(head);
 	printLL(head);
