@@ -50,6 +50,36 @@ void postorder(node* root) {
 	cout << root->data << " ";
 }
 
+// int countNodes(node* root) {
+// 	if (!root) return 0;
+
+// 	return countNodes(root->left) + countNodes(root->right) + 1;
+// }
+
+int countNodes(node* root) {
+
+	return (!root) ? 0 : countNodes(root->left) + countNodes(root->right) + 1;
+}
+
+// int height(node* root) {
+// 	if (!root) return 0;
+
+// 	return max(height(root->left), height(root->right)) + 1;
+// }
+
+int height(node* root) {
+	return (!root) ? 0 : max(height(root->left), height(root->right)) + 1;
+}
+
+int diameter(node* root) {
+	if (!root) return 0;
+
+	int op1 = height(root->left) + height(root->right);
+	int op2 = diameter(root->left);
+	int op3 = diameter(root->right);
+	return max(op1, max(op2, op3));
+}
+
 // Input: 8 10 1 -1 -1 6 4 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
 int main() {
 
@@ -61,7 +91,9 @@ int main() {
 	cout << endl;
 	postorder(root);
 	cout << endl;
-
+	cout << "Total Nodes: " << countNodes(root) << endl;
+	cout << "Height: " << height(root) << endl;
+	cout << "Diameter: " << diameter(root) << endl;
 
 	return 0;
 }
