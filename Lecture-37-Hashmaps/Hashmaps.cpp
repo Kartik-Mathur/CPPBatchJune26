@@ -25,6 +25,7 @@ class hashmap {
 		return ans % ts;
 	}
 
+
 	void rehashing() {
 		// Purane array ka data kaam ka hai toh memory leak se bachane ke liye
 		// store krna padega
@@ -94,6 +95,30 @@ public:
 			cout << endl;
 		}
 	}
+
+	node* search(string key) {
+		int hashIndex = hashFunction(key);
+		node* head = a[hashIndex];
+		while (head != NULL) {
+			if (head->key == key) return head;
+
+			head = head->next;
+		}
+
+		return head; // or return NULL; // since head == NULL;
+	}
+
+	int& operator[](string key) {
+		node* x = search(key);
+		if (x == NULL) {
+			int g;
+			insert(key, g); // g can be anything because yeh update
+			// ho jaegi abhi jab hum bucket return krenge main ko
+			x = search(key);
+			return x->data;
+		}
+		return x->data;
+	}
 };
 
 int main() {
@@ -104,6 +129,11 @@ int main() {
 	h.insert("Apple", 150);
 	h.insert("Mausmi", 90);
 	h.insert("Guava", 900);
+
+	// ek hi function multiple kaam kr dega
+	h["Pineapple"] = 20; // Insertion
+	h["Pineapple"] = 200; // Updation
+	cout << h["Pineapple"] << endl; // Search
 
 	h.print();
 
