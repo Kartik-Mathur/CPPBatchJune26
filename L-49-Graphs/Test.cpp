@@ -37,7 +37,7 @@ public:
 
 		// Set the distance of all nodes equals to INT_MAX
 		for (auto p : adj) {
-			dist[p.first] = I
+			dist[p.first] = INT_MAX;
 		}
 
 		// Distance src from itself is zero
